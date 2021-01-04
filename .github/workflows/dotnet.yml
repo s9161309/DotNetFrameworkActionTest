@@ -27,6 +27,6 @@ jobs:
       - name: Setup DotNet
         uses: actions/setup-dotnet@v1
       - name: Test
-        run: dotnet test --configuration $env:Configuration
+        run: dotnet test ~/UnitTestProject/UnitTestProject.csproj --configuration $env:Configuration
         env:
           Configuration: ${{ matrix.configuration }}
