@@ -21,7 +21,7 @@ jobs:
       - name: Setup
         uses: actions/setup-dotnet@v1
       - name: Add packages
-        run: dotnet add package MSTest.TestAdapter --version 2.1.2
+        run: dotnet add UnitTestProject package MSTest.TestAdapter --version 2.1.2
       - name: Build
         run: dotnet build --configuration $env:Configuration
         env:
