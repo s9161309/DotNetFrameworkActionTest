@@ -21,7 +21,8 @@ jobs:
       - name: Setup
         uses: actions/setup-dotnet@v1
       - name: Setup Nuget
-        run: dotnet restore 
+        run: nuget.exe update -id MSTest.TestFramework -id MSTest.TestAdapter -version 99.99.99-dev -source "<Root>\src\testfx\artifacts\Debug\MSTestPackages" -prerelease packages.config
+        # https://github.com/Microsoft/testfx-docs/blob/master/docs/contribute.md#deployment-through-clinon-vs-ides
       - name: Build
         run: dotnet build --configuration $env:Configuration
         env:
